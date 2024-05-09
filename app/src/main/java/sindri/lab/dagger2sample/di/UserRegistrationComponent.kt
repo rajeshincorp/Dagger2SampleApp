@@ -6,7 +6,9 @@ import dagger.Component
 import dagger.Module
 import sindri.lab.dagger2sample.StartingActivity
 import sindri.lab.dagger2sample.UserRegistrationService
+import javax.inject.Singleton
 
+@ApplicationScope
 @Component(modules = [NotificationServiceModule::class,UserRepositoryModule::class])
 interface UserRegistrationComponent {
 
