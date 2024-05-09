@@ -36,9 +36,8 @@ class StartingActivity : AppCompatActivity() {
             //userRegistrationService = DaggerUserRegistrationComponent.builder().build().getUserRegistrationService()
         }
 
-        DaggerUserRegistrationComponent.builder().notificationServiceModule(
-            NotificationServiceModule(5)
-        ).build().inject(this)
+        //Now using factory
+        DaggerUserRegistrationComponent.factory().create(7).inject(this)
 
         userRegistrationService.registerUser("rajesh@gmail.com","12345678")
     }

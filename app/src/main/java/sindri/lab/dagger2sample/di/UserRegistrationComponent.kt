@@ -1,6 +1,7 @@
 package sindri.lab.dagger2sample.di
 
 import androidx.activity.ComponentActivity
+import dagger.BindsInstance
 import dagger.Component
 import dagger.Module
 import sindri.lab.dagger2sample.StartingActivity
@@ -22,7 +23,10 @@ interface UserRegistrationComponent {
     //
     fun inject(activity: StartingActivity)
 
-    /*@Component.Factory
-    interface factory(retriails: Int)*/
+    //Factory added to pass dynamic value to dependencies, previously done through modules
+    @Component.Factory
+    interface Factory {
+        fun create(@BindsInstance retryCount: Int): UserRegistrationComponent
+    }
 
 }
