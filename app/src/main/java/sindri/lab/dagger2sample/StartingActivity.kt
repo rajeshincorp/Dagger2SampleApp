@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import sindri.lab.dagger2sample.di.DaggerUserRegistrationComponent
+import sindri.lab.dagger2sample.di.NotificationServiceModule
 import javax.inject.Inject
 
 class StartingActivity : AppCompatActivity() {
@@ -35,7 +36,9 @@ class StartingActivity : AppCompatActivity() {
             //userRegistrationService = DaggerUserRegistrationComponent.builder().build().getUserRegistrationService()
         }
 
-        DaggerUserRegistrationComponent.builder().build().inject(this)
+        DaggerUserRegistrationComponent.builder().notificationServiceModule(
+            NotificationServiceModule(5)
+        ).build().inject(this)
 
         userRegistrationService.registerUser("rajesh@gmail.com","12345678")
     }

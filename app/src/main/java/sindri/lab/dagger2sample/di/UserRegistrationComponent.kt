@@ -21,4 +21,8 @@ interface UserRegistrationComponent {
     //now you will have use
     //
     fun inject(activity: StartingActivity)
+
+    /*@Component.Factory
+    interface factory(retriails: Int)*/
+
 }

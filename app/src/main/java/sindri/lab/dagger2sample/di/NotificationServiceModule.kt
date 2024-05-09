@@ -9,18 +9,19 @@ import sindri.lab.dagger2sample.UserRepository
 import javax.inject.Named
 
 @Module
-class NotificationServiceModule {
-
+class NotificationServiceModule(private val retryCount: Int) {
+//"(private val retryCount: Int)" is added to support dynamic value in MessageService()
     //@MessageQualifier is alternative to @Named("message"), so because to prevent typo
     @MessageQualifier
     @Provides
     fun getMessageService() : NotificationService {
-        return MessageService()
+        //retryCount is a dynamic value that we are passing at runtime
+        return MessageService(retryCount)
     }
 
     @Named("email")
     @Provides
-    fun getEmaNotificationServicece() : NotificationService {
+    fun getEmaNotificationService() : NotificationService {
         return EmailService()
     }
 
