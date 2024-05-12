@@ -8,12 +8,13 @@ import androidx.core.view.WindowInsetsCompat
 import sindri.lab.dagger2sample.R
 import sindri.lab.dagger2sample.UserApplication
 import sindri.lab.dagger2sample.UserRegistrationService
+import sindri.lab.dagger2sample.di.components.DaggerUserRegistrationComponent
 import javax.inject.Inject
 
 class StartingActivity : AppCompatActivity() {
 
     @Inject
-    lateinit var userRegistrationService : UserRegistrationService
+    lateinit var userRegistrationService: UserRegistrationService
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,10 +28,14 @@ class StartingActivity : AppCompatActivity() {
 
         val appComponent = (application as UserApplication).appComponent
 
-        val component = appComponent.getUserRegistrationComponentBuilder().retryCount(37).build()
+        val component =
+            DaggerUserRegistrationComponent.builder()
+                .appComponent(appComponent)
+                .retryCount(78)
+                .build()
         component.inject(this)
 
-        userRegistrationService.registerUser("rajesh@gmail.com","12345678")
+        userRegistrationService.registerUser("rajesh@gmail.com", "12345678")
     }
 
 }
