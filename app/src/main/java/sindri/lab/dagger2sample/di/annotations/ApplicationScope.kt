@@ -1,11 +1,11 @@
-package sindri.lab.dagger2sample.di
+package sindri.lab.dagger2sample.di.annotations
 
 import java.lang.annotation.Documented
 import java.lang.annotation.Retention
 import java.lang.annotation.RetentionPolicy
-import javax.inject.Qualifier
+import javax.inject.Scope
 
-@Qualifier
+@Scope
 @Documented
 @Retention(RetentionPolicy.RUNTIME)
-annotation class MessageQualifier()
+annotation class ApplicationScope()

@@ -1,4 +1,4 @@
-package sindri.lab.dagger2sample.di
+package sindri.lab.dagger2sample.di.modules
 
 import dagger.Binds
 import dagger.Module

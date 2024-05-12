@@ -1,11 +1,16 @@
-package sindri.lab.dagger2sample
+package sindri.lab.dagger2sample.ui
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import sindri.lab.dagger2sample.di.DaggerUserRegistrationComponent
+import sindri.lab.dagger2sample.R
+import sindri.lab.dagger2sample.UserApplication
+import sindri.lab.dagger2sample.UserRegistrationService
+import sindri.lab.dagger2sample.di.components.AppComponent
+import sindri.lab.dagger2sample.di.components.DaggerAppComponent
+import sindri.lab.dagger2sample.di.components.DaggerUserRegistrationComponent
 import javax.inject.Inject
 
 class StartingActivity : AppCompatActivity() {
@@ -23,19 +28,9 @@ class StartingActivity : AppCompatActivity() {
             insets
         }
 
-        fun comment1(){
-            //compiler will not generate DaggerUserRegistrationComponent if you don't use
-            //plugins {
-            //    id("kotlin-kapt")
-            //} &
-            // kapt("com.google.dagger:dagger-android-processor:2.51.1")
-            // kapt("com.google.dagger:dagger-compiler:2.51.1")
-            // instead of annotationProcessor("com.google.dagger:dagger-compiler:2.51.1"), etc only
-            //--before inject fun at UserRegistrationService is used--
-            //userRegistrationService = DaggerUserRegistrationComponent.builder().build().getUserRegistrationService()
-        }
+        val appComponent = (application as UserApplication).appComponent
 
-        val component = (application as UserApplication).daggerUserRegistrationComponent
+        val component = DaggerUserRegistrationComponent.factory().create(11, appComponent)
         component.inject(this)
 
         userRegistrationService.registerUser("rajesh@gmail.com","12345678")

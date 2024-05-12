@@ -1,4 +1,4 @@
-package sindri.lab.dagger2sample.di
+package sindri.lab.dagger2sample.di.annotations
 
 import java.lang.annotation.Documented
 import java.lang.annotation.Retention
@@ -8,4 +8,4 @@ import javax.inject.Scope
 @Scope
 @Documented
 @Retention(RetentionPolicy.RUNTIME)
-annotation class ApplicationScope()
+annotation class ActivityScope()

@@ -1,9 +1,7 @@
 package sindri.lab.dagger2sample
 
-import androidx.versionedparcelable.ParcelImpl
-import sindri.lab.dagger2sample.di.MessageQualifier
+import sindri.lab.dagger2sample.di.annotations.MessageQualifier
 import javax.inject.Inject
-import javax.inject.Named
 
 class UserRegistrationService @Inject constructor(
     private val userRepository: UserRepository,

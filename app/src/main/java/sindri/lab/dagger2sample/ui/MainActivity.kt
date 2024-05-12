@@ -1,4 +1,4 @@
-package sindri.lab.dagger2sample
+package sindri.lab.dagger2sample.ui
 
 import android.os.Bundle
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -7,6 +7,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import sindri.lab.dagger2sample.R
 import sindri.lab.dagger2sample.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {

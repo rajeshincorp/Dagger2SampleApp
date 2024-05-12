@@ -1,11 +1,11 @@
-package sindri.lab.dagger2sample.di
+package sindri.lab.dagger2sample.di.modules
 
 import dagger.Module
 import dagger.Provides
 import sindri.lab.dagger2sample.EmailService
 import sindri.lab.dagger2sample.MessageService
 import sindri.lab.dagger2sample.NotificationService
-import sindri.lab.dagger2sample.UserRepository
+import sindri.lab.dagger2sample.di.annotations.MessageQualifier
 import javax.inject.Named
 
 @Module

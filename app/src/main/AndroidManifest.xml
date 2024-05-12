@@ -14,10 +14,10 @@
         android:theme="@style/Theme.Dagger2Sample"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.MainActivity"
             android:exported="false" />
         <activity
-            android:name=".StartingActivity"
+            android:name=".ui.StartingActivity"
             android:exported="true"
             android:label="@string/app_name">
             <intent-filter>

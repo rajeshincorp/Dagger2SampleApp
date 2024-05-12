@@ -1,16 +1,16 @@
 package sindri.lab.dagger2sample
 
 import android.app.Application
-import sindri.lab.dagger2sample.di.DaggerUserRegistrationComponent
-import sindri.lab.dagger2sample.di.UserRegistrationComponent
+import sindri.lab.dagger2sample.di.components.AppComponent
+import sindri.lab.dagger2sample.di.components.DaggerAppComponent
 
 class UserApplication : Application() {
 
-    lateinit var daggerUserRegistrationComponent: UserRegistrationComponent
+    lateinit var appComponent: AppComponent
 
     @Override
     override fun onCreate() {
         super.onCreate()
-        daggerUserRegistrationComponent = DaggerUserRegistrationComponent.factory().create(9)
+        appComponent = DaggerAppComponent.builder().build()
     }
 }
