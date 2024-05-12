@@ -14,9 +14,9 @@ class NotificationServiceModule {
     //@MessageQualifier is alternative to @Named("message"), so because to prevent typo
     @MessageQualifier
     @Provides
-    fun getMessageService(retryCount: Int) : NotificationService {
+    fun getMessageService() : NotificationService {
         //retryCount is a dynamic value that we are passing at runtime
-        return MessageService(retryCount)
+        return MessageService(41)
     }
 
     @Named("email")

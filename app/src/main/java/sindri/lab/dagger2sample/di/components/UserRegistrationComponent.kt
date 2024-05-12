@@ -14,9 +14,9 @@ interface UserRegistrationComponent {
 
     fun inject(activity: StartingActivity)
 
-    @Subcomponent.Factory
+    /*@Subcomponent.Factory
     interface Factory {
         fun create(@BindsInstance retryCount: Int): UserRegistrationComponent
-    }
+    }*/
 
 }
