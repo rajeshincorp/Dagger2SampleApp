@@ -27,7 +27,7 @@ class StartingActivity : AppCompatActivity() {
 
         val appComponent = (application as UserApplication).appComponent
 
-        val component = appComponent.getUserRegistrationComponent()
+        val component = appComponent.getUserRegistrationComponentBuilder().retryCount(37).build()
         component.inject(this)
 
         userRegistrationService.registerUser("rajesh@gmail.com","12345678")
