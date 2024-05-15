@@ -10,12 +10,9 @@ import javax.inject.Named
 
 @Module
 class NotificationServiceModule {
-//"(private val retryCount: Int)" is removed because we are using factory now in UserRegistrationComponent
-    //@MessageQualifier is alternative to @Named("message"), so because to prevent typo
     @MessageQualifier
     @Provides
     fun getMessageService(retryCount: Int) : NotificationService {
-        //retryCount is a dynamic value that we are passing at runtime
         return MessageService(retryCount)
     }
 
